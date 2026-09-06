@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mohanasundaram S — Banking Operations Professional</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ivory:#F7F5F0;
+    --navy:#16324F;
+    --navy-soft:#2B4A6F;
+    --bronze:#9C7A3C;
+    --charcoal:#2A2A28;
+    --rule:#D8D3C7;
+    --rule-strong:#B9B2A0;
+    --paper:#FCFBF8;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--ivory);
+    color:var(--charcoal);
+    font-family:'IBM Plex Sans', sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  .wrap{max-width:760px; margin:0 auto; padding:0 28px;}
+
+  /* ---------- Header / statement head ---------- */
+  header.statement{
+    border-bottom:2px solid var(--navy);
+    padding:56px 0 22px;
+  }
+  .statement-top{
+    display:flex; justify-content:space-between; align-items:flex-start;
+    gap:24px; flex-wrap:wrap;
+  }
+  .statement-mark{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.14em;
+    color:var(--bronze);
+  }
+  .statement-date{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--navy-soft);
+    text-align:right;
+  }
+  h1.name{
+    font-family:'Source Serif 4', serif;
+    font-weight:600;
+    font-size:42px;
+    color:var(--navy);
+    margin-top:18px;
+    letter-spacing:-0.01em;
+  }
+  .role-line{
+    font-size:16px;
+    color:var(--navy-soft);
+    margin-top:6px;
+  }
+  .contact-row{
+    margin-top:20px;
+    display:flex; flex-wrap:wrap; gap:0;
+    font-size:13.5px;
+    color:var(--charcoal);
+  }
+  .contact-row span{
+    padding:0 16px 0 0;
+    margin-right:16px;
+    border-right:1px solid var(--rule);
+  }
+  .contact-row span:last-child{border-right:none;}
+  .contact-row a{text-decoration:none; border-bottom:1px solid var(--rule-strong);}
+  .contact-row a:hover{border-bottom-color:var(--bronze); color:var(--bronze);}
+
+  /* ---------- Sections ---------- */
+  section{padding:38px 0;}
+  section + section{border-top:1px solid var(--rule);}
+  .section-label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    letter-spacing:0.12em;
+    color:var(--bronze);
+    display:flex; align-items:center; gap:12px;
+    margin-bottom:20px;
+  }
+  .section-label::after{
+    content:"";
+    flex:1;
+    height:1px;
+    background:var(--rule);
+  }
+  .summary-text{
+    font-size:16.5px;
+    max-width:64ch;
+    color:var(--charcoal);
+  }
+
+  /* ---------- Experience ledger ---------- */
+  .ledger-entry{
+    display:grid;
+    grid-template-columns: 1fr auto;
+    gap:4px 20px;
+    padding:18px 0;
+  }
+  .ledger-entry + .ledger-entry{border-top:1px dashed var(--rule);}
+  .ledger-role{
+    font-family:'Source Serif 4', serif;
+    font-size:19px;
+    font-weight:600;
+    color:var(--navy);
+  }
+  .ledger-dates{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    color:var(--navy-soft);
+    white-space:nowrap;
+    align-self:start;
+    padding-top:4px;
+    text-align:right;
+  }
+  .ledger-company{
+    grid-column:1/2;
+    font-size:13.5px;
+    color:var(--bronze);
+    margin-bottom:8px;
+  }
+  .ledger-body{grid-column:1/3;}
+  .ledger-body ul{
+    list-style:none;
+    margin-top:4px;
+  }
+  .ledger-body li{
+    position:relative;
+    padding-left:16px;
+    font-size:14.5px;
+    color:var(--charcoal);
+    margin-bottom:6px;
+  }
+  .ledger-body li::before{
+    content:"–";
+    position:absolute; left:0; color:var(--rule-strong);
+  }
+
+  /* ---------- Two-column blocks (education / skills) ---------- */
+  .grid-2{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:28px;
+  }
+  .edu-item{margin-bottom:16px;}
+  .edu-degree{
+    font-family:'Source Serif 4', serif;
+    font-size:16px;
+    font-weight:600;
+    color:var(--navy);
+  }
+  .edu-meta{
+    font-size:13px;
+    color:var(--charcoal);
+    opacity:0.8;
+  }
+  .edu-year{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--bronze);
+  }
+
+  .skill-group{margin-bottom:14px;}
+  .skill-label{
+    font-size:12.5px;
+    font-weight:600;
+    color:var(--navy);
+    display:block;
+    margin-bottom:4px;
+  }
+  .skill-value{
+    font-size:13.5px;
+    color:var(--charcoal);
+  }
+
+  /* ---------- Projects ---------- */
+  .project-row{
+    display:flex; justify-content:space-between; align-items:baseline;
+    padding:12px 0;
+    border-top:1px dashed var(--rule);
+    gap:16px;
+  }
+  .project-row:first-of-type{border-top:none;}
+  .project-name{
+    font-family:'Source Serif 4', serif;
+    font-size:15.5px;
+    font-weight:600;
+    color:var(--navy);
+  }
+  .project-desc{
+    font-size:13px;
+    color:var(--charcoal);
+    opacity:0.85;
+    text-align:right;
+    max-width:52%;
+  }
+
+  /* ---------- Certification badge line ---------- */
+  .cert-line{
+    display:flex; align-items:baseline; justify-content:space-between;
+    font-size:14.5px;
+    padding:10px 0;
+  }
+  .cert-name{color:var(--navy); font-weight:600;}
+  .cert-urn{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--bronze);
+  }
+
+  /* ---------- Footer ---------- */
+  footer{
+    padding:40px 0 60px;
+    text-align:left;
+  }
+  .footer-note{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    color:var(--navy-soft);
+    letter-spacing:0.04em;
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:640px){
+    h1.name{font-size:32px;}
+    .grid-2{grid-template-columns:1fr;}
+    .ledger-dates{text-align:left; padding-top:0;}
+    .ledger-entry{grid-template-columns:1fr;}
+    .project-row{flex-direction:column; align-items:flex-start;}
+    .project-desc{text-align:left; max-width:100%; margin-top:4px;}
+    .contact-row span{border-right:none; padding-right:0; margin-right:0; width:100%; padding-bottom:6px;}
+  }
+
+  /* Accessibility: focus visibility */
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--bronze);
+    outline-offset:2px;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="statement">
+    <div class="statement-top">
+      <div class="statement-mark">PROFESSIONAL PORTFOLIO — STATEMENT OF RECORD</div>
+      <div class="statement-date">TRICHY, TAMIL NADU<br>UPDATED SEP 2026</div>
+    </div>
+    <h1 class="name">Mohanasundaram S</h1>
+    <div class="role-line">Associate Relationship Manager · Banking Operations</div>
+    <div class="contact-row">
+      <span>+91 6369312600</span>
+      <span><a href="mailto:mohanasundaram8292@gmail.com">mohanasundaram8292@gmail.com</a></span>
+      <span>Trichy, Tamil Nadu</span>
+    </div>
+  </header>
+
+  <section id="summary">
+    <div class="section-label">SUMMARY</div>
+    <p class="summary-text">
+      Banking operations professional with hands-on experience across relationship management, mortgage lending (Home Loans & LAP), sales, and accounting. Skilled in customer onboarding, KYC and documentation, loan processing, and cross-selling banking products. IRDAI (IC38) certified, with working knowledge of SAP FICO, SQL, and MS Excel — building toward a long-term career in banking backend operations.
+    </p>
+  </section>
+
+  <section id="experience">
+    <div class="section-label">EXPERIENCE</div>
+
+    <div class="ledger-entry">
+      <div class="ledger-role">Associate Relationship Manager</div>
+      <div class="ledger-dates">JUL 2026 — PRESENT</div>
+      <div class="ledger-company">IDFC FIRST Bank, Trichy</div>
+      <div class="ledger-body">
+        <ul>
+          <li>Manage and grow a portfolio of customer relationships, supporting senior RMs in acquisition, servicing, and retention.</li>
+          <li>Cross-sell savings accounts, loans, and investment products to existing and prospective customers.</li>
+          <li>Coordinate with backend operations on account maintenance, documentation, and compliance checks.</li>
+          <li>Support KYC/AML adherence and maintain accurate customer records in CRM systems.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ledger-entry">
+      <div class="ledger-role">Mortgage Division Staff</div>
+      <div class="ledger-dates">OCT 2025 — MAY 2026</div>
+      <div class="ledger-company">Axis Bank Ltd. (via Quess Corp), Tiruchirappalli</div>
+      <div class="ledger-body">
+        <ul>
+          <li>Handled Home Loan (HL) and Loan Against Property (LAP) products end-to-end — customer interaction, documentation, and processing.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ledger-entry">
+      <div class="ledger-role">Sales Officer</div>
+      <div class="ledger-dates">FEB 2025 — OCT 2025</div>
+      <div class="ledger-company">HDB Finance Pvt Ltd, Tiruchirappalli</div>
+      <div class="ledger-body">
+        <ul>
+          <li>Promoted financial products to prospective customers, consistently working toward monthly sales targets.</li>
+          <li>Built customer relationships and applied basic market analysis to identify sales opportunities.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ledger-entry">
+      <div class="ledger-role">Accountant</div>
+      <div class="ledger-dates">JUL 2024 — FEB 2025</div>
+      <div class="ledger-company">BYMOR, Tiruchirappalli</div>
+      <div class="ledger-body">
+        <ul>
+          <li>Managed accounts payable, accounts receivable, and financial reporting.</li>
+          <li>Maintained accurate financial records to support monthly closing cycles.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="education-skills">
+    <div class="section-label">EDUCATION &amp; SKILLS</div>
+    <div class="grid-2">
+      <div>
+        <div class="edu-item">
+          <div class="edu-degree">B.Com C.A</div>
+          <div class="edu-meta">SRM Arts and Science College, Bharathidasan University — 71%</div>
+          <div class="edu-year">2024</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-degree">XII — Higher Secondary</div>
+          <div class="edu-meta">Sacred Heart Hr. Sec. School — 66%</div>
+          <div class="edu-year">2021</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-degree">X — Secondary</div>
+          <div class="edu-meta">Sacred Heart Hr. Sec. School — 51%</div>
+          <div class="edu-year">2019</div>
+        </div>
+      </div>
+      <div>
+        <div class="skill-group">
+          <span class="skill-label">SOFTWARE</span>
+          <span class="skill-value">MS Office (Word, Excel, PowerPoint) — Certified in Excel Worksheet Interface, SRM College</span>
+        </div>
+        <div class="skill-group">
+          <span class="skill-label">PROGRAMMING / ERP</span>
+          <span class="skill-value">SQL, SAP FICO (HANA), HTML, basic web development</span>
+        </div>
+        <div class="skill-group">
+          <span class="skill-label">DOMAIN</span>
+          <span class="skill-value">KYC &amp; documentation, loan processing (HL/LAP), CRM, reconciliation, customer relationship management</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="certifications">
+    <div class="section-label">CERTIFICATIONS</div>
+    <div class="cert-line">
+      <span class="cert-name">IRDAI IC38 Certification (2024)</span>
+      <span class="cert-urn">URN SLII0406240136</span>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="section-label">PROJECTS</div>
+    <div class="project-row">
+      <div class="project-name">Student Management System</div>
+      <div class="project-desc">Built using SQL</div>
+    </div>
+    <div class="project-row">
+      <div class="project-name">E-commerce Website</div>
+      <div class="project-desc">Built using HTML, JavaScript, CSS</div>
+    </div>
+    <div class="project-row">
+      <div class="project-name">Sales Dashboard</div>
+      <div class="project-desc">Built using Excel</div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-note">END OF STATEMENT — THANK YOU FOR REVIEWING</div>
+  </footer>
+
+</div>
+
+</body>
+</html>
